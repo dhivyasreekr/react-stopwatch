@@ -1,0 +1,97 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: cover;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  margin: 10;
+}
+
+.stopwatch {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.stopwatch:hover {
+  transform: scale(1.05);
+}
+
+.animated-image {
+  width: 100px;
+  position: relative;
+  top: 10px;
+  left: 50px;
+  transform: translateX(-50%);
+  animation: moveImage 5s linear infinite;
+}
+
+@keyframes moveImage {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -10px);
+  }
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+/* Time display styles */
+.time {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+  margin: 20px 0;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Control button styles */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  background-color: #007bff;
+  /* color: white; */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Animation for buttons */
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-4px);
+  }
+}
+
+button:active {
+  animation: bounce 0.2s;
+}
+
+/* Reset button disabled state */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
